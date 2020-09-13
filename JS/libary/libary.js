@@ -40,15 +40,6 @@ $(document).ready(function(){
       }
   });
 
-
-  //为所有a标签添加元素
-  // $(".child-this").click(function(){
-  //     //获得当前元素为a的子标签中的内容
-  //     var path = $(this).children("a").attr("path")
-  //     alert(path)
-  //   $(".reader-iframe").attr("src","/HTML/LibaryIfram/user/roleManage.html")
-  // })
-
 });
 
 
@@ -122,38 +113,33 @@ $(document).ready(function () {
 })
 
 
-var mybook = "/HTML/LibaryIfram/book/myBook.html";
-var array = new Array();
-array.push(mybook)
-//主页切换iframe
+//1.点击左侧导航栏主页切换iframe  2.且添加顶部标签栏title
 $(document).ready(function () {
-    //为左侧导航栏所有按纽添加函数
-    var html = '';
-    html += " <div class=\"tabs-body-iframe\">   ";
-    html += "  <iframe class=\"reader-iframe\" src=\"\"></iframe> "
-    html +=" </div>"
+    //1.点击左侧导航栏主页切换iframe data-name作为新增的div块id
     $(".child-this").click(function () {
-        var htmlPath = $(this).attr("path");
-        //遍历数组
-        $.each(array,function (i) {
-            if (array[i]==htmlPath){
-                alert("存在了")
-            } else {
-                array.push(htmlPath);  //将新添加的页面路径加入数组中
-                $(".body_right").append(html);   //前端html追加
-                var index01= $(".tabs-body-iframe").index();
-                alert(index01)
-                $(".tabs-body-iframe").children()
-                $(".tabs-body-iframe").children(".reader-iframe").attr("src",htmlPath)
-                // $(".tabs-body-iframe").hide()
-            }
-        })
+        var html = '';
+        html += " <div id=\"\"  class=\"tabs-body-iframe\">   ";
+        html += "  <iframe class=\"reader-iframe\" src=\"\"></iframe> "
+        html +=" </div>"
+        var dataName = $(this).attr("data-name");           //获得唯一名称作为后面添加的id div
+        var htmlPath = $(this).children('a').attr("path");  //获得要跳转的页面地址
+        var addId = '#'+dataName;  //要添加的div id
+        if($(".body_right").children(addId).length>0){   //!不需要加双引号
+            $(".tabs-body-iframe").hide();      //将所有iframe的类隐藏
+            $(addId).show();                    //将点击的这个id显示
+        }else {
+            $(".body_right").append(html);      //前端html追加
+            $(".tabs-body-iframe").last().attr("id",dataName)  //为最新加的ifram块添加唯一id标识
+            $(addId).children(".reader-iframe").attr("src",htmlPath)
+            //隐藏其他的，显示这个
+            $(".tabs-body-iframe").hide();
+            $(addId).show();
 
+            var titleHtml =  "<li class=\"tab-title-home\">\n"
+                + "<img src=\"../IMG/secendTop/homeTitle.png\">\n" +
+                "</li>"
 
-
-        //
-        // ($(".tabs-body-iframe").children(".reader-iframe").attr("src")==(dataName)).show()
-
+        }
     })
 
 })

@@ -113,6 +113,7 @@ body{
 /*次顶部导航栏图标主体部分*/
 .mainImgList{
     /*border-top: 2px solid white;*/
+    margin-left: -6px;
     width: 77.4%;
 }
 
@@ -123,8 +124,34 @@ body{
 #tab-title li{
     list-style: none;
     border-top: 2px solid white;
+    font-size: 14px;
+    max-width: 160px;
+}
+/*设置每个框*/
+.tab-title-ico{
+    margin-left: -4px;
+    width: 100px;
+}
+/*设置字体*/
+.tab-title-ico span{
+    color: #675e5e;
+    margin-left: 10px;
+    line-height: 40px;
+}
+/*先用paddin  再用margin调整图片变为正方形*/
+.tab-title-ico img{
+    position: absolute;
+    width: 16px;
+    padding: 0;
+    margin: 12px 0 0px 14px;
+    border-radius: 50%;
+}
+.tab-title-ico img:hover{
+    background: #ff2217;
+    /*opacity:0.5;*/
 }
 #tab-title li:hover{
+    background: #f3e9f3;
     border-top: 2px solid black;
 }
 /*导航栏主页图标*/
@@ -133,8 +160,9 @@ body{
     margin-left: -40px;
 }
 .tab-title-home img{
-    margin-left: 8px;
+    margin-left: 11px;
 }
+
 
 
 
