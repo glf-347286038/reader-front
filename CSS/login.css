@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #19778c, #095f88);
+    background-size:1400% 300%;
+    animation: dynamics 6s ease infinite;
+    -webkit-animation: dynamics 6s ease infinite;
+    -moz-animation: dynamics 6s ease infinite;
+    font-size: 14px;
+    color: #ffffff;
+    min-height: 700px;
+}
+/*登录样式*/
+.main {
+    position: fixed;
+    text-align: center;
+    top: 140px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.login{
+    width: 470px;
+    height:470px;
+    background: linear-gradient(to bottom, #19778c, #095f88);
+    animation: dynamics 6s ease infinite;
+    -webkit-animation: dynamics 6s ease infinite;
+    -moz-animation: dynamics 6s ease infinite;
+    opacity: 0.9;
+    border: solid 1px #13a1fc;
+    background-size:1400% 300%;
+}
+
+/* 登陆注册 */
+.login>ul{
+    margin: 8px 0 0 122px;
+}
+.login>ul>li{   
+    list-style: none;
+    float: left;
+    margin: 6px;
+    height: 44px;
+}
+/* .login>ul>li>span{
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: 2px;
+    display: block;
+    margin: 6px 0 0px 0;
+    border-bottom: 4px solid #1629b5;
+}  */
+/* 登录a标签 */
+.loginSpan{  
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: block;
+    margin: 6px 0 0px 0;
+    border-bottom: 4px solid #1629b5;
+    color: #ffffff;
+}
+.registSpan{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: block;
+    margin: 6px 0 0px 0;
+    color: #ffffff;
+    /* border-bottom: 4px solid #1629b5; */
+}
+.userdiv{
+    background: cadetblue;
+    clear: both;
+    width: 76%;
+    height: 45px;
+    margin: 65px 0 0 60px;
+    border-radius: 30px;
+}
+.userdiv>img{
+    position: absolute;
+    margin: 5px 0 0 0px;
+}
+.name{
+    background: cadetblue;
+    /* text-align: center; */
+    outline: none;
+    border-style: none;
+    width: 270px;
+    height: 42px;
+    border-radius: 4px;
+    font-size: 15px;
+    margin-left: 38px;
+    letter-spacing: 4px;
+}
+.passworddiv{
+    background: cadetblue;
+    clear: both;
+    width: 76%;
+    height: 45px;
+    margin: 50px 0 0 60px;
+    border-radius: 30px;
+}
+.passworddiv>img{
+    position: absolute;
+    margin: 5px 0 0 0px;
+}
+.password{
+    background: cadetblue;
+    /* text-align: center; */
+    outline: none;
+    border-style: none;
+    width: 270px;
+    height: 42px;
+    border-radius: 4px;
+    font-size: 15px;
+    margin-left: 38px;
+    letter-spacing: 4px;
+}
+.code{
+    background: cadetblue;
+    outline: none;
+    border-style: none;
+    width: 200px;
+    height: 44px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 50px 0 0 0;
+    text-align: center;
+}
+#code{
+    width: 94px;
+    background: cadetblue;
+    display: inline-block;
+    /* margin-left: 14px; */
+    cursor: pointe;
+    height: 44px;
+    border-style: none;
+    outline: none;
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+.loginBtn{
+    width: 340px;
+    height: 44px;
+    background-color: #0090ff;
+    border-radius: 4px;
+    display: block;
+    margin: 40px 0 0 70px;
+    text-align: center;
+    line-height: 44px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+#RegistIframe{
+    display: none;
+    /* z-index: 0; */
+}
+.RegistIframe{
+    width: 97%;
+    height: 400px;
+    border-style: hidden;
+}

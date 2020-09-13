@@ -1,0 +1,284 @@
+html{
+    height:100%
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    /* background-color: azure; */
+}
+.body_con{
+    width: 100%;
+    height: 100%;
+}
+
+/*最顶部开始*/
+.body_top{
+    left: 220px;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    background:white;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    z-index: 999;
+}
+.firstTop-nav-left{
+    width: 40%;
+    height: 100%;
+    padding: 0 10px;
+    margin: 0;
+}
+.firstTop-nav-left li{
+    display: inline-block;
+    list-style: none;
+    line-height: 50px;
+    padding: 0 20px 0 0;
+}
+.firstTop-nav-left li a{
+    border-top: 3px solid white;
+    display: block;
+}
+/*为最顶部图标添加鼠标悬停事件*/
+.firstTop-nav-left-item a:hover{
+    border-top:3px solid black;
+}
+
+.firstTop-nav-left li img{
+    width: 16px;
+}
+.first-nav-input-search{
+    margin: -15px 0 0 0;
+    position: absolute;
+    outline: 0;
+    border: aliceblue;
+    /*background: aqua;*/
+}
+
+
+
+
+/*次顶部导航图标栏*/
+.page_tabs{
+    left: 220px;
+    width: 100%;
+    height: 40px;
+    top: 50px;
+    position: fixed;
+    background:white;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    z-index: 9;
+}
+.page_tabs img{
+    padding-top: 10px;
+    width: 20px;
+    margin-left: 6px;
+}
+.tabs-nav{
+    line-height: 32px;
+    margin: 0;
+}
+.tabs-nav li{
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+    /*border-top: 2px solid white;*/
+    border-right: 1px solid beige;
+    /*元素溢出时隐藏*/
+    /*overflow: hidden;*/
+}
+.prevImg{
+    border-top: 2px solid white;
+    margin-left: -40px;
+    width: 33px;
+}
+.prevImg:hover{
+    border-top: 2px solid black;
+}
+.nextImg{
+    border-top: 2px solid white;
+    width: 33px;
+}
+.nextImg:hover{
+    border-top: 2px solid black;;
+}
+
+/*下拉图标*/
+.dropImg{
+    border-top: 2px solid white;
+    width: 36px;
+}
+.dropImg:hover{
+    border-top: 2px solid black;
+}
+/*次顶部导航栏图标主体部分*/
+.mainImgList{
+    /*border-top: 2px solid white;*/
+    width: 77.4%;
+}
+
+
+#tab-title{
+    vertical-align: top;
+}
+#tab-title li{
+    list-style: none;
+    border-top: 2px solid white;
+}
+#tab-title li:hover{
+    border-top: 2px solid black;
+}
+/*导航栏主页图标*/
+.tab-title-home{
+    width: 40px;
+    margin-left: -40px;
+}
+.tab-title-home img{
+    margin-left: 8px;
+}
+
+
+
+
+
+
+.body_left{
+    width: 220px;
+    height: 100%;
+    background: #20222A;
+    position: fixed;
+    z-index: 999;
+}
+.body_right{
+    width: 100%;
+    position: fixed;
+    top: 90px;
+    left: 220px;
+    /* overflow-y: auto; */
+    box-sizing: border-box;
+    bottom: 0;
+    z-index: 998;
+    margin: 0;
+    padding: 0;
+}
+
+
+.tabs-body-iframe{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.reader-iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: none;
+}
+
+#side-menu{
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    color: white;
+}
+/* 用户头像信息开始 */
+.userInfo{
+    /* box-shadow: 0 1px 2px 0 rgba(0,0,0,.1); */
+    /* border-bottom:10px solid rgb(218, 202, 202) */
+    background: #22231f;
+    height: 13%;
+}
+.usernameSpan{
+    position: absolute;
+    color: white;
+    margin: -33px 0 0 60px;
+}
+.usernameSpan img{
+    width: 16px;
+    margin-left: 75px;
+}
+.remark{
+    width: 40px;
+    margin: 25px 0 0 8px;
+}
+.editUserInfo{
+    position: absolute;
+    list-style: none;
+    width: 80px;
+    background: white;
+    color: #695f5f;
+    font-size: 10px;
+    margin: 0 0 0 10px;
+    height: 90px;
+    display: none;
+}
+
+.editUserInfo li{
+    line-height: 20px;
+    padding-top: 7px;
+    margin-left: -6px;
+    /*border-bottom: 1px solid;*/
+}
+/* 用户信息结束 */
+
+#side-menu li{
+    /*height: 45px;*/
+    line-height: 45px;
+    /*padding-top: 5px;*/
+    font-size: 14px;
+    border-bottom: 1px solid #43435f;
+}
+/* 鼠标未点击状态 */
+.atag{
+    display: block;
+    height: 45px;
+    opacity: 4;
+    color: white;
+    text-decoration: none;
+    border-left: 4px solid #20222A;
+}
+/* 所有左侧导航栏字体的设置 */
+.atag cite{
+    font-style: normal;
+    margin: 0 110px 0 50px;
+}
+/* 鼠标悬浮状态 */
+.atag:hover{
+    /*position: absolute;*/
+    /*添加鼠标悬停边框后，需要给原来的a标签添加相同宽度的边框*/
+    border-left:4px solid #009688;
+}
+
+.li-more{
+    width: 16px;
+    position: absolute;
+    margin-top: 15px;
+}
+.li-ico{
+    position: absolute;
+    width: 16px;
+    margin: 14px 0 0 20px;
+}
+
+.nav-child{
+    background: #191717;
+    display: none;
+}
+.child-this{
+   
+}
+.child-this a{
+    display: block;
+    padding: 0 0 0 70px;
+}
+.child-this a:hover{
+    background: #009688;
+}
+/* 主页 */

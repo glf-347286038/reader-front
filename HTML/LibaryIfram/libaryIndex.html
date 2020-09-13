@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://localhost:8085/HTML/LibaryIfram/libaryIndex.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../CSS/libary/libaryIndex.css">
+    <script src="../../JS/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <div class="test">
+        <p>22</p>
+        <p>22</p>
+        <p>22</p>
+        
+        <input type="text" class="usernameText">
+        <input type="password" class="passwordText">
+        <input type="button" value="添加用户"><br><br>
+        <input type="button" value="修改用户"><br>
+        <input type="button" value="查询所有用户" onclick="queryUserList()">
+    </div>
+
+    <script>
+        function queryUserList(){
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/reader/queryUserList",
+                // data: JSON.stringify({
+                //     keyWord:"高",
+                //     keyType:"name"
+                // }),
+                data:{
+                    keyWord:"高",
+                    keyType:"name",
+                },
+                dataType: "JSON",
+                // contentType:"application/json;charset=UTF-8",
+                success: function (response) {
+                    alert("成功！");
+                    alert(response[1]);
+                }
+            });
+        }
+    </script>
+
+
+
+</body></html>

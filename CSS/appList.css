@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #19778c, #095f88);
+    background-size:1400% 300%;
+    animation: dynamics 6s ease infinite;
+    -webkit-animation: dynamics 6s ease infinite;
+    -moz-animation: dynamics 6s ease infinite;
+    font-size: 14px;
+    color: #ffffff;
+    min-height: 700px;
+}
+/*登录样式*/
+.main {
+    position: fixed;
+    text-align: center;
+    top: 182px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.AppList{
+    width: 50%;
+    list-style: none;
+    /* display: inline-block; */
+}
+.AppList li{
+    float: left;
+    margin: 0 0 0 10%;
+}
+.AppList li img{
+    height: 100px;
+    width: 100px;
+}

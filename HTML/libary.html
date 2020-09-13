@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://localhost:8085/HTML/library.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>爱阅读</title>
+    <!--<link rel="shortcut icon" href="http://localhost:8085/IMG/novel.png">-->
+    <link rel="shortcut icon" href="../IMG/阅读.png">
+	<!--阿里图标库-->
+    <!-- <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1632750_204xwxiwzht.css?1583918713" /> -->
+    <link rel="stylesheet" href="../CSS/libary/libary.css">
+    <script src="../JS/jquery-1.12.4.min.js"></script>
+    <script src="../JS/libary/libary.js"></script>
+</head>
+<body>
+<div class="body_con">
+    <!--顶部导航栏目开始-->
+    <div class="body_top">
+        <ul class="firstTop-nav-left">
+            <li class="firstTop-nav-left-item">
+                <a lay-href="javascript:;" title="侧边伸缩">
+                    <img src="../IMG/firstTop/hiddenLeftNav.png" class="stretch">
+                </a>
+            </li>
+            <li class="firstTop-nav-left-item">
+                <a lay-href="http://www.baidu.com" target="_blank" title="百度">
+                    <img src="../IMG/firstTop/baidu.png">
+                </a>
+            </li>
+            <li class="firstTop-nav-left-item">
+                <a lay-href="javascript:;" layadmin-event="refresh" title="刷新">
+                    <img src="../IMG/firstTop/刷新.png">
+                </a>
+            </li>
+            <!--first-nav-left-item-->
+            <li class="firstTop-nav-left-item">
+                <a lay-href="javascript:;" title="搜索">
+                    <input type="text" placeholder="搜索..." autocomplete="off" class="first-nav-input-search" layadmin-event="serach" >
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--次顶部图标-->
+    <div class="page_tabs">
+        <ul class="tabs-nav">
+            <li class="prevImg">
+                <img src="../IMG/secendTop/prev.png">
+            </li>
+            <li class="mainImgList">
+                <ul id="tab-title">
+                   <li class="tab-title-home">
+                       <img src="../IMG/secendTop/homeTitle.png">
+                   </li>
+                    <li>
+                        <img src="../IMG/secendTop/homeTitle.png">
+                    </li>
+                    <li>
+                        <img src="../IMG/secendTop/homeTitle.png">
+                    </li>
+                </ul>
+            </li>
+            <li class="nextImg">
+                <img src="../IMG/secendTop/next.png">
+            </li>
+            <li class="dropImg">
+                <img src="../IMG/secendTop/drop.png">
+            </li>
+        </ul>
+
+    </div>
+    <!-- 左侧导航栏开始 -->
+    <div class="body_left">
+        <div class="userInfo">
+            <img src="../IMG/高凌峰.png" class="remark" alt="头像">
+            <div class="usernameSpan">
+                <span>高凌峰</span>
+                <img src="../IMG/展开.png" onclick="editUserInfo()" alt="修改信息">
+                    <ul class="editUserInfo">
+                        <li>修改头像</li>
+                        <li>个人资料</li>
+                        <li>安全退出</li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="side-menu">
+            <li class="nav-home">
+                <a href="javascript:;" class="atag">
+                    <img src="../IMG/主页.png" class="li-ico" alt="主页">
+                    <cite>主页</cite>
+                    <img src="../IMG/展开.png" class="li-more" alt="更多">
+                </a>
+            </li>
+            <li class="nav-book">
+                <a href="javascript:;" class="atag">
+                    <img src="../IMG/book.png" class="li-ico" alt="小说">
+                    <cite>小说</cite>
+                    <img src="../IMG/展开.png" class="li-more" alt="更多">
+                </a>
+                <div class="nav-child">
+                    <div data-name="myBook" class="child-this">
+                        <a path="/HTML/LibaryIfram/book/myBook.html">我的收藏</a>
+                    </div>
+                    <div data-name="bookList" class="child-this">
+                        <a path="/HTML/LibaryIfram/book/bookList.html">小说列表</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-user">
+                <a href="javascript:;" class="atag">
+                    <img src="../IMG/用户.png" class="li-ico" alt="用户管理">
+                    <cite>用户</cite>
+                    <img src="../IMG/展开.png" class="li-more" alt="更多">
+                </a>
+                <div class="nav-child">
+                    <div data-name="roleManage" class="child-this">
+                      <a path="/HTML/LibaryIfram/user/roleManager.html">角色管理</a>
+                    </div>
+                    <div data-name="administrator" class="child-this">
+                      <a path="/HTML/LibaryIfram/user/administrator.html">后台管理员</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-resume">
+                <a href="javascript:;" class="atag">
+                    <img src="../IMG/简历.png" class="li-ico" alt="简历">
+                    <cite>简历</cite>
+                    <img src="../IMG/展开.png" class="li-more" alt="更多">
+                    <!-- <a href="javascript:;">主页</a> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="body_right">
+        <div class="tabs-body-iframe">
+            <iframe class="reader-iframe" src="../HTML/LibaryIfram/home/home01.html"></iframe>
+        </div>
+       
+    </div>
+</div>
+
+
+
+</body></html>

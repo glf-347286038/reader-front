@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>身份认证</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="shortcut icon" href="./IMG/indexico.jpg">
+		<!-- <link rel="stylesheet" href="/CSS/index.css"> -->
+		<link rel="stylesheet" href="./CSS/login.css">
+		<script src="./JS/indexjs/index.js"></script>
+		<script src="./JS/indexjs/three.min.js"></script>
+		<script type="text/javascript" src="./JS/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="./JS/indexjs/SpecialEffects.js" ></script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="login">
+				<ul>
+					<li onclick="loginIframe();">
+						<a class="loginSpan" href="javascript:void(0);">登录</a>
+						<!-- <span >登录</span> -->
+					</li>
+					<li onClick="registIframe();">
+						<a class="registSpan" href="javascript:void(0);">注册</a>
+						<!-- <span class="regitSpan">注册</span> -->
+					</li>
+				</ul><br/>
+
+				<div id="LoginIframe">
+					<div class="userdiv">
+						<img src="./IMG/user.png" alt="用户名">
+						<input type="text" class="name" placeholder="请输入用户名"/>
+					</div>
+					<div class="passworddiv">
+						<img src="./IMG/password.png" class="passwordpng" alt="密码">
+						<input type="text" class="password" placeholder="请输入密码"/>
+					</div>
+					<input type="text" class="code" placeholder="请输入验证码"/>
+					<input type="button" id="code" onClick="change();"/>
+					<a class="loginBtn" onclick="login()">立即登录</a>
+				</div>
+
+				<div id="RegistIframe">
+					<iframe src="./HTML/regist.html" class="RegistIframe"></iframe>
+				</div>
+				
+			</div>
+		</div>
+		
+		<a href="./HTML/appList.html">jump</a>
+
+			
+		
+	</body>
+</html>
