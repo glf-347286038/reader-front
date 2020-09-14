@@ -129,7 +129,7 @@ body{
 }
 /*设置每个框*/
 .tab-title-ico{
-    margin-left: -4px;
+    /*margin-left: -4px;*/
     width: 100px;
 }
 /*设置字体*/
@@ -158,6 +158,10 @@ body{
 .tab-title-home{
     width: 40px;
     margin-left: -40px;
+}
+/*选中下个兄弟元素！！*/
+.tab-title-home+li{
+    margin-left: -4px;
 }
 .tab-title-home img{
     margin-left: 11px;

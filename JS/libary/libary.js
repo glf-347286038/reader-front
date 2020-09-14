@@ -55,6 +55,8 @@ $(document).ready(function () {
             $('.body_left').animate({width:'60px'},350);
             //修改状态图片
             $(this).attr("src","../IMG/firstTop/showLeftNav.png");
+            //将所有展开收起状态全部设置为展开状态
+            $(".li-more").attr("src","../IMG/展开.png")
             //将左侧导航栏的所有字体隐藏
             $(".atag cite").css({
                 display:"none",
@@ -117,27 +119,58 @@ $(document).ready(function () {
 $(document).ready(function () {
     //1.点击左侧导航栏主页切换iframe data-name作为新增的div块id
     $(".child-this").click(function () {
-        var html = '';
-        html += " <div id=\"\"  class=\"tabs-body-iframe\">   ";
-        html += "  <iframe class=\"reader-iframe\" src=\"\"></iframe> "
-        html +=" </div>"
         var dataName = $(this).attr("data-name");           //获得唯一名称作为后面添加的id div
         var htmlPath = $(this).children('a').attr("path");  //获得要跳转的页面地址
+        var htmlTitleName = $(this).children('a').text()        //获得a标签中的文字作为顶部导航图标中的文字
         var addId = '#'+dataName;  //要添加的div id
-        if($(".body_right").children(addId).length>0){   //!不需要加双引号
+        if($(".body_right").children(addId).length>0){   //!不需要加双引号   点击的页面已经被加上页面的话
             $(".tabs-body-iframe").hide();      //将所有iframe的类隐藏
             $(addId).show();                    //将点击的这个id显示
+
+            addId+="ico";
+            //处理顶部图标css
+            $("#tab-title").children('li').css({
+                background: "none" ,
+                "border-top":"2px solid white"
+            })
+            $(addId).css({
+                background:"#f3e9f3",
+                "border-top": '2px solid black',
+            })
+
         }else {
-            $(".body_right").append(html);      //前端html追加
+            //追加主体iframe
+            var html = '';
+            html += " <div id=\"\"  class=\"tabs-body-iframe\">   ";
+            html += "  <iframe class=\"reader-iframe\" src=\"\"></iframe> "
+            html +=" </div>"
+            //前端html追加iframe
+            $(".body_right").append(html);
             $(".tabs-body-iframe").last().attr("id",dataName)  //为最新加的ifram块添加唯一id标识
             $(addId).children(".reader-iframe").attr("src",htmlPath)
-            //隐藏其他的，显示这个
+            //隐藏其他的iframe，显示这个iframe
             $(".tabs-body-iframe").hide();
             $(addId).show();
 
-            var titleHtml =  "<li class=\"tab-title-home\">\n"
-                + "<img src=\"../IMG/secendTop/homeTitle.png\">\n" +
-                "</li>"
+            //追加顶部图标
+            var topTitleHtml = "<li class=\"tab-title-ico\">\n" +
+                "                        <span></span>\n" +
+                "                        <img src=\"../IMG/secendTop/closeTitle.png\">\n" +
+                "                    </li>"
+            $("#tab-title").append(topTitleHtml)    //前端追加图标
+            dataName +="ico";   //顶部图标设置唯一id以面后面操作css会冲突
+            $(".tab-title-ico").last().children('span').html(htmlTitleName)   //给图标中span赋文字
+            $(".tab-title-ico").last().attr("id",dataName)
+           // 为最新添加的顶部图标设置css,先取消其他的图标css样式 不要用#table li因为会覆盖鼠标悬停样式
+            $("#tab-title").children('li').css({
+                background: "none" ,
+                "border-top":"2px solid white"
+            })
+            $(".tab-title-ico").last().css({    //为最新添加的图标添加css样式
+                background:"#f3e9f3",
+                "border-top": '2px solid black',
+            })
+
 
         }
     })
