@@ -130,13 +130,14 @@ body{
 /*设置每个框*/
 .tab-title-ico{
     /*margin-left: -4px;*/
-    width: 100px;
+    width: 115px;
 }
 /*设置字体*/
 .tab-title-ico span{
     color: #675e5e;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
     line-height: 40px;
+    margin: 0 -5px -0 18px;
 }
 /*先用paddin  再用margin调整图片变为正方形*/
 .tab-title-ico img{

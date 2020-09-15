@@ -161,11 +161,33 @@ $(document).ready(function () {
             dataName +="ico";   //顶部图标设置唯一id以面后面操作css会冲突
             $(".tab-title-ico").last().children('span').html(htmlTitleName)   //给图标中span赋文字
             $(".tab-title-ico").last().attr("id",dataName)
-           // 为最新添加的顶部图标设置css,先取消其他的图标css样式 不要用#table li因为会覆盖鼠标悬停样式
+           // 为最新添加的顶部图标设置css,先取消其他的图标css样式 会覆盖之前的css hover样式
             $("#tab-title").children('li').css({
                 background: "none" ,
                 "border-top":"2px solid white"
             })
+            // $(".tab-title-ico").last().siblings().hover(function(){
+            //     $(".tab-title-ico").last().siblings().css({  //悬停时事件
+            //         background:"#f3e9f3",
+            //         "border-top": '2px solid black',
+            //     });
+            // },function(){
+            //     $(".tab-title-ico").last().siblings().css({   //移开时事件
+            //         background: "none" ,
+            //         "border-top":"2px solid white"
+            //     });
+            // });
+            $(".tab-title-ico").last().siblings().hover(function(){
+                $(".tab-title-ico").last().siblings().css({  //悬停时事件
+                    background:"#f3e9f3",
+                    "border-top": '2px solid black',
+                });
+            },function(){
+                $(".tab-title-ico").last().siblings().css({   //移开时事件
+                    background: "none" ,
+                    "border-top":"2px solid white"
+                });
+            });
             $(".tab-title-ico").last().css({    //为最新添加的图标添加css样式
                 background:"#f3e9f3",
                 "border-top": '2px solid black',
