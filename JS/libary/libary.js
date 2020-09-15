@@ -158,40 +158,43 @@ $(document).ready(function () {
                 "                        <img src=\"../IMG/secendTop/closeTitle.png\">\n" +
                 "                    </li>"
             $("#tab-title").append(topTitleHtml)    //前端追加图标
-            dataName +="ico";   //顶部图标设置唯一id以面后面操作css会冲突
+            var titleIco =dataName+"ico";   //顶部图标设置唯一id以面后面操作css会冲突
             $(".tab-title-ico").last().children('span').html(htmlTitleName)   //给图标中span赋文字
-            $(".tab-title-ico").last().attr("id",dataName)
+            $(".tab-title-ico").last().attr("id",titleIco)
            // 为最新添加的顶部图标设置css,先取消其他的图标css样式 会覆盖之前的css hover样式
             $("#tab-title").children('li').css({
                 background: "none" ,
                 "border-top":"2px solid white"
             })
-            // $(".tab-title-ico").last().siblings().hover(function(){
-            //     $(".tab-title-ico").last().siblings().css({  //悬停时事件
-            //         background:"#f3e9f3",
-            //         "border-top": '2px solid black',
-            //     });
-            // },function(){
-            //     $(".tab-title-ico").last().siblings().css({   //移开时事件
-            //         background: "none" ,
-            //         "border-top":"2px solid white"
-            //     });
-            // });
-            $(".tab-title-ico").last().siblings().hover(function(){
-                $(".tab-title-ico").last().siblings().css({  //悬停时事件
+
+            $(".tab-title-ico").last().css({    //为最新添加的图标添加css样式  然后再加悬停事件否则没用
+                background:"#f3e9f3",
+                "border-top": '2px solid black',
+            })
+            titleIco="#"+titleIco
+            $(titleIco).hover(function(){
+                $(titleIco).css({  //为新增的顶部按钮添加悬停时事件
                     background:"#f3e9f3",
                     "border-top": '2px solid black',
                 });
             },function(){
-                $(".tab-title-ico").last().siblings().css({   //移开时事件
+                $(titleIco).css({   //移开时事件
                     background: "none" ,
                     "border-top":"2px solid white"
                 });
             });
-            $(".tab-title-ico").last().css({    //为最新添加的图标添加css样式
-                background:"#f3e9f3",
-                "border-top": '2px solid black',
-            })
+            $(".tab-title-home").hover(function(){   //特意为homm按钮添加的鼠标悬停事件
+                $('.tab-title-home').css({  //悬停时事件
+                    background:"#f3e9f3",
+                    "border-top": '2px solid black',
+                });
+            },function(){
+                $('.tab-title-home').css({   //移开时事件
+                    background: "none" ,
+                    "border-top":"2px solid white"
+                });
+            });
+
 
 
         }
