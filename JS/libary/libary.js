@@ -13,9 +13,9 @@ function editUserInfo(){  //修改用户资料
    }
 }
 
+//判断点击的是哪个下拉按钮并将图片修改
+//为所有展开图标添加点击事件
 $(document).ready(function(){
-    //判断点击的是哪个下拉按钮并将图片修改
-    //为所有展开图标添加点击事件
   $(".li-more").click(function(){
       //获取src中的值
       var status = $(this).attr("src");
@@ -81,6 +81,9 @@ $(document).ready(function () {
             $(".mainImgList").css({
                 width:"89.5%",
             })
+            $(".body_right").css({
+                width: "95.6%",
+            })
         }else {
             //当前状态为影藏左侧dao航栏 显示的是展开图片
 
@@ -91,10 +94,10 @@ $(document).ready(function () {
                 display:"block",
             })
             //将左侧导航栏的所有字体、展开图标、二级标题显示
-            $(".atag cite,.li-more").css({
-                display:"inline",
-            });
-
+            // $(".atag cite,.li-more").css({
+            //     display:"inline",
+            // });
+            $('.atag cite,.li-more').fadeIn(900);  //设置元素淡入时间
 
 
             //将最顶部导航栏\顶部标签栏\右侧主体 设置距离左边220px
@@ -108,6 +111,9 @@ $(document).ready(function () {
 
             //将左侧导航栏向右滑动宽度变为220px
             $('.body_left').animate({width:'220px'},250);
+            $(".body_right").css({
+                width: "83.9%",
+            })
 
         }
         // $(".body_left").animate({right:'50px'});
@@ -116,9 +122,8 @@ $(document).ready(function () {
 
 
 //1.点击左侧导航栏主页切换iframe  2.且添加顶部标签栏title
-$(document).ready(function () {
+$(document).on("click",".child-this",function(){
     //1.点击左侧导航栏主页切换iframe data-name作为新增的div块id
-    $(".child-this").click(function () {
         var dataName = $(this).attr("data-name");           //获得唯一名称作为后面添加的id div
         var htmlPath = $(this).children('a').attr("path");  //获得要跳转的页面地址
         var htmlTitleName = $(this).children('a').text()        //获得a标签中的文字作为顶部导航图标中的文字
@@ -138,7 +143,7 @@ $(document).ready(function () {
                 "border-top": '2px solid black',
             })
 
-        }else {
+        }else {   //该页面没有被打开
             //追加主体iframe
             var html = '';
             html += " <div id=\"\"  class=\"tabs-body-iframe\">   ";
@@ -167,38 +172,45 @@ $(document).ready(function () {
                 "border-top":"2px solid white"
             })
 
-            $(".tab-title-ico").last().css({    //为最新添加的图标添加css样式  然后再加悬停事件否则没用
+            $(".tab-title-ico").last().css({    //为最新添加的图标添加css样式
                 background:"#f3e9f3",
-                "border-top": '2px solid black',
+                "border-top":"2px solid black"
             })
-            titleIco="#"+titleIco
-            $(titleIco).hover(function(){
-                $(titleIco).css({  //为新增的顶部按钮添加悬停时事件
-                    background:"#f3e9f3",
-                    "border-top": '2px solid black',
-                });
-            },function(){
-                $(titleIco).css({   //移开时事件
-                    background: "none" ,
-                    "border-top":"2px solid white"
-                });
-            });
-            $(".tab-title-home").hover(function(){   //特意为homm按钮添加的鼠标悬停事件
-                $('.tab-title-home').css({  //悬停时事件
-                    background:"#f3e9f3",
-                    "border-top": '2px solid black',
-                });
-            },function(){
-                $('.tab-title-home').css({   //移开时事件
-                    background: "none" ,
-                    "border-top":"2px solid white"
-                });
-            });
-
-
-
+            // titleIco="#"+titleIco
+            // $(titleIco).hover(function(){
+            //     $(titleIco).css({  //为新增的顶部按钮添加悬停时事件   设置css优先级就可以解决了
+            //         background:"#f3e9f3",
+            //         "border-top": '2px solid black',
+            //     });
+            // },function(){
+            //     $(titleIco).css({   //移开时事件
+            //         background: "none" ,
+            //         "border-top":"2px solid white"
+            //     });
+            // });
         }
     })
 
-})
 
+
+
+//点击顶部导航切换页面iframe 左侧导航背景改变 顶部导航图标css改变
+$(document).on("click","#tab-title li",function(){
+    var index = $(this).index()
+    //隐藏其他iframe 显示点击的Iframe
+    $(".body_right .tabs-body-iframe").eq(index).show().siblings().hide()
+
+    //改变兄弟元素的图标
+    $(this).siblings().css({
+        background:"none",
+        "border-top": "2px solid white",
+    })
+    //给当前图标加元素
+    $(this).css({
+        background:"#f3e9f3",
+        "border-top": "2px solid black",
+    })
+    // $(this).css({
+
+    // })
+});
