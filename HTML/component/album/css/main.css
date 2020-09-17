@@ -1,5 +1,5 @@
 ﻿*{margin:0;padding:0}
-html, body {font-family: "Microsoft Yahei", Verdana, sans-serif;}
+html, body {font-family: "Microsoft Yahei", Verdana, sans-serif;overflow: hidden}
 ul, li{list-style: none;}
 address, cite, dfn, em, var {font-style: normal;}
 
@@ -12,5 +12,5 @@ address, cite, dfn, em, var {font-style: normal;}
 .banner #ar{right:15px}
 .banner ul{z-index: 1;width: 600%;overflow: hidden;}
 .banner ul .slider-item {width:640px; float: left;height:480px; position: relative; overflow: hidden;}
-.banner ul .slider-item .slider-title {position: absolute;left: 0;bottom: 0px;width: 610px;max-height: 56px;padding: 15px;text-align:left;line-height: 28px;color: #fff;font-size: 18px;font-weight: bold;background: -webkit-linear-gradient(top, transparent, rgba(0,0,0,0.9));background: url(../images/slider-info-bg.png) \9;}
+.banner ul .slider-item .slider-title {position: absolute;left: 0;bottom: 0px;width: 610px;max-height: 56px;padding: 15px;text-align:left;line-height: 28px;color: #fff;font-size: 18px;font-weight: bold;background: -webkit-linear-gradient(top, transparent, rgba(0,0,0,0.9));background: url(../img/05.jpg) \9;}
 .banner .progress{position:absolute;left:0;bottom:0;width:15%;min-height:3px;overflow:hidden;z-index:2;background:#f60}
