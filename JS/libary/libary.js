@@ -84,6 +84,9 @@ $(document).ready(function () {
             $(".body_right").css({
                 width: "95.6%",
             })
+            $(".firstTop-nav-left").css({
+                width:"95%"
+            })
         }else {
             //当前状态为影藏左侧dao航栏 显示的是展开图片
 
@@ -113,6 +116,9 @@ $(document).ready(function () {
             $('.body_left').animate({width:'220px'},250);
             $(".body_right").css({
                 width: "83.9%",
+            })
+            $(".firstTop-nav-left").css({
+                width:"84%"
             })
 
         }

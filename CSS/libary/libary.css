@@ -23,7 +23,7 @@ body{
     z-index: 999;
 }
 .firstTop-nav-left{
-    width: 40%;
+    width: 84%;
     height: 100%;
     padding: 0 10px;
     margin: 0;
@@ -202,7 +202,6 @@ body{
     background: #dce2e6;
 }
 
-
 .tabs-body-iframe{
     position: absolute;
     top: 0;
@@ -222,7 +221,11 @@ body{
     bottom: 0;
     border: none;
 }
-
+/*系统时间组件*/
+.systemTime iframe{
+    border: none;
+    height: 50px;
+}
 #side-menu{
     padding-left: 0;
     margin-bottom: 0;
