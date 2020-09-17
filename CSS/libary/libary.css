@@ -67,6 +67,8 @@ body{
     background:white;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
     z-index: 9;
+    /*元素溢出时隐藏！！*/
+    overflow: hidden;
 }
 .page_tabs img{
     padding-top: 10px;
@@ -83,8 +85,6 @@ body{
     vertical-align: top;
     /*border-top: 2px solid white;*/
     border-right: 1px solid beige;
-    /*元素溢出时隐藏*/
-    /*overflow: hidden;*/
 }
 .prevImg{
     border-top: 2px solid white;
@@ -120,6 +120,7 @@ body{
 
 #tab-title{
     vertical-align: top;
+    cursor: pointer;
 }
 #tab-title li{
     list-style: none;
@@ -152,13 +153,16 @@ body{
     /*opacity:0.5;*/
 }
 #tab-title li:hover{
-    background: #f3e9f3;
-    border-top: 2px solid black;
+    /*!important设置优先级  这样就不会被覆盖了*/
+    background: #f3e9f3 !important;
+    border-top: 2px solid black !important;
 }
 /*导航栏主页图标*/
 .tab-title-home{
     width: 40px;
     margin-left: -40px;
+    /*background: #f3e9f3;*/
+    /*border-top: 2px solid black;*/
 }
 /*选中下个兄弟元素！！*/
 .tab-title-home+li{
@@ -180,9 +184,12 @@ body{
     background: #20222A;
     position: fixed;
     z-index: 999;
+    /*文字光标问题的解决*/
+    cursor: pointer;
 }
 .body_right{
-    width: 100%;
+    /*width: 100%;*/
+    width: 83.9%;
     position: fixed;
     top: 90px;
     left: 220px;
@@ -192,6 +199,7 @@ body{
     z-index: 998;
     margin: 0;
     padding: 0;
+    background: #dce2e6;
 }
 
 
