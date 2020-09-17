@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>unslider演示</title>
+<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+<div class="banner" id="b04">
+	<ul>
+		<li class="slider-item"><a href="#"><img src="img/输入一族.JPG" alt="王者战队" width="640" height="480" ><span class="slider-title"><em>输入一族人员齐聚！！！抓紧上分无敌手</em></span></a></li>
+		<li class="slider-item"><a href="#"><img src="img/高中校服照.JPG" alt="高中校服照" width="640" height="480" ><span class="slider-title"><em>高中校服照</em></span></a></li>
+		<li class="slider-item"><a href="#"><img src="img/408.JPG" alt="408寝室合照" width="640" height="480" ><span class="slider-title"><em>408寝室合照</em></span></a></li>
+		<!--<li class="slider-item"><a href="#"><img src="img/01.jpg" alt="小米进军泡面界，5块一桶还包邮？雷军回应；92女生：360关闭直播不诚恳，需周鸿祎道歉；传阿里即将控股A站|早报" width="640" height="480" ><span class="slider-title"><em>小米进军泡面界，5块一桶还包邮？雷军回应；92女生：360关闭直播不诚恳，需周鸿祎道歉；传阿里即将控股A站|早报</em></span></a></li>-->
+		<!--<li class="slider-item"><a href="#"><img src="img/02.jpg" alt="如果你是创业者，你或许应该琢磨琢磨投资人是怎么想的" width="640" height="480" ><span class="slider-title"><em>如果你是创业者，你或许应该琢磨琢磨投资人是怎么想的</em></span></a></li>-->
+		<!--<li class="slider-item"><a href="#"><img src="img/03.jpg" alt="傅盛：生物学思维给我的四个启示" width="640" height="480" ><span class="slider-title"><em>傅盛：生物学思维给我的四个启示</em></span></a></li>-->
+		<!--<li class="slider-item"><a href="#"><img src="img/04.jpg" alt="重仓何小鹏" width="640" height="480" ><span class="slider-title"><em>重仓何小鹏</em></span></a></li>-->
+		<!--<li class="slider-item"><a href="#"><img src="img/05.jpg" alt="深潜：王石的创业" width="640" height="480" ><span class="slider-title"><em>深潜：王石的创业</em></span></a></li>-->
+	</ul>
+	<div class="progress"></div>
+	<a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al" src="img/arrowl.png" alt="prev" width="20" height="35"></a>
+	<a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="img/arrowr.png" alt="next" width="20" height="37"></a>
+</div>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/unslider.min.js"></script>
+<script>
+$(document).ready(function(e) {
+	var progress = $(".progress"),li_width = $("#b04 li").length;
+    var unslider04 = $('#b04').unslider({
+		dots: true,
+		complete:function(index){//自己添加的，官方没有
+			progress.animate({"width":(100/li_width)*(index+1)+"%"});
+		}
+	}),
+
+	data04 = unslider04.data('unslider');
+	$('.unslider-arrow04').click(function() {
+        var fn = this.className.split(' ')[1];
+        data04[fn]();
+    });
+});
+</script>
+
+</body>
+</html>
