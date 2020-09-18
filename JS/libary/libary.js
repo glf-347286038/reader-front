@@ -22,7 +22,7 @@ $(document).ready(function(){
       var status = $(this).children(".li-more").attr("src");
       if(status=="../IMG/收起.png"){
           //当前图片箭头朝上 为展开状态  显示收起状态图片 点击则将子菜单隐藏 图片变为箭头朝下
-          $(this).children("a").children(".li-more").attr("src","../IMG/展开.png");
+          $(this).children(".li-more").attr("src","../IMG/展开.png");
           $(this).next(".nav-child").slideToggle(300);
           
       }else{
