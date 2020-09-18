@@ -13,30 +13,24 @@ function editUserInfo(){  //修改用户资料
    }
 }
 
-//判断点击的是哪个下拉按钮并将图片修改
+//点击左侧导航栏展开或者收起
 //为所有展开图标添加点击事件
 $(document).ready(function(){
-  $(".li-more").click(function(){
-      //获取src中的值
-      var status = $(this).attr("src");
+  $("#side-menu li a").click(function(){
+      //注意选中的标签，如果选中的是li li包含了展开的二级标题，再次点击二级标题，会收起
+      //获取点击的li中右边的图标src判断当前状态
+      var status = $(this).children(".li-more").attr("src");
       if(status=="../IMG/收起.png"){
-        //当前图片箭头朝上 为展开状态  显示收起状态图片 点击则将子菜单隐藏 图片变为箭头朝下
-        $(this).attr("src","../IMG/展开.png");
-          $(this).parent().next().slideToggle(300);
-        // $(this).parent().next().css({
-        //     "display":"none",
-        // })
+          //当前图片箭头朝上 为展开状态  显示收起状态图片 点击则将子菜单隐藏 图片变为箭头朝下
+          $(this).children("a").children(".li-more").attr("src","../IMG/展开.png");
+          $(this).next(".nav-child").slideToggle(300);
+          
       }else{
           //当前图片箭头朝下 为收起状态 点击的话显示出隐藏内容
-        $(this).attr("src","../IMG/收起.png");
-          $(this).parent().next().slideToggle(300);
-        // $(this).parent().next().css({
-        //     "display":"block",
-        // })
-
-          // $('#toggle').click(function(){  上下滑动
-          //     $('.left').slideToggle(300);
-          // });
+          //1.修改右边图标
+          $(this).children(".li-more").attr("src","../IMG/收起.png");
+          //2.展开 时间为300毫秒
+          $(this).next(".nav-child").slideToggle(300);
       }
   });
 
