@@ -13,42 +13,43 @@ function editUserInfo(){  //修改用户资料
    }
 }
 
-//点击左侧导航栏展开或者收起
-//为所有展开图标添加点击事件
-$(document).ready(function(){
-  $("#side-menu li a").click(function(){
-      //注意选中的标签，如果选中的是li li包含了展开的二级标题，再次点击二级标题，会收起
-      //获取点击的li中右边的图标src判断当前状态
-      var status = $(this).children(".li-more").attr("src");
-      if(status=="../IMG/收起.png"){
-          //当前图片箭头朝上 为展开状态  显示收起状态图片 点击则将子菜单隐藏 图片变为箭头朝下
-          $(this).children("a").children(".li-more").attr("src","../IMG/展开.png");
-          $(this).next(".nav-child").slideToggle(300);
-          
-      }else{
-          //当前图片箭头朝下 为收起状态 点击的话显示出隐藏内容
-          //1.修改右边图标
-          $(this).children(".li-more").attr("src","../IMG/收起.png");
-          //2.展开 时间为300毫秒
-          $(this).next(".nav-child").slideToggle(300);
-      }
-  });
-
-});
 
 
-
-//展开或收起左侧导航栏
 $(document).ready(function () {
-    $(".stretch").click(function () {
-        //1.判断当前状态
-        var status = $(this).attr("src")
+
+    //展开或隐藏左侧导航栏二级标题
+    $("#side-menu li a").click(function(){
+        //注意选中的标签，如果选中的是li li包含了展开的二级标题，再次点击二级标题，会收起
+        //1.获得左侧导航栏是隐藏还是伸缩的，如果是隐藏的状态要改为展开状态
+        var leftNavstatus = $(".stretch").attr("src")
+        if(leftNavstatus=="../IMG/firstTop/showLeftNav.png"){
+            checkLeftNavStatus(leftNavstatus)
+        }
+        //2.获取左侧导航栏一级标题的展开或者收缩状态，获取点击的li中右边的图标src判断当前状态
+        var status = $(this).children(".li-more").attr("src");
+        if(status=="../IMG/收起.png"){
+            //当前图片箭头朝上 为展开状态  显示收起状态图片 点击则将子菜单隐藏 图片变为箭头朝下
+            $(this).children(".li-more").attr("src","../IMG/展开.png");
+            $(this).next(".nav-child").slideToggle(300);
+        }else{
+            //当前图片箭头朝下 为收起状态 点击的话显示出隐藏内容
+            //1.修改右边图标
+            $(this).children(".li-more").attr("src","../IMG/收起.png");
+            //2.展开 时间为300毫秒
+            $(this).next(".nav-child").slideToggle(300);
+        }
+    });
+
+
+
+    //判断展开或收起左侧导航栏，通过展开伸缩左侧导航栏按钮名判断
+    function checkLeftNavStatus(status) {
         if(status=="../IMG/firstTop/hiddenLeftNav.png"){
             //当前为展开状态，显示的是可以隐藏按钮
             //将左侧导航栏向左滑动剩余60px
             $('.body_left').animate({width:'60px'},350);
             //修改状态图片
-            $(this).attr("src","../IMG/firstTop/showLeftNav.png");
+            $(".stretch").attr("src","../IMG/firstTop/showLeftNav.png");
             //将所有展开收起状态全部设置为展开状态
             $(".li-more").attr("src","../IMG/展开.png")
             //将左侧导航栏的所有字体隐藏
@@ -85,7 +86,7 @@ $(document).ready(function () {
             //当前状态为影藏左侧dao航栏 显示的是展开图片
 
             //修改状态图片
-            $(this).attr("src","../IMG/firstTop/hiddenLeftNav.png");
+            $(".stretch").attr("src","../IMG/firstTop/hiddenLeftNav.png");
 
             $(".usernameSpan").css({
                 display:"block",
@@ -117,6 +118,12 @@ $(document).ready(function () {
 
         }
         // $(".body_left").animate({right:'50px'});
+    }
+    //为展开收缩按钮添加点击事件
+    $(".stretch").click(function () {
+        //1.判断当前状态
+        var status = $(this).attr("src")
+        checkLeftNavStatus(status)
     })
 })
 
